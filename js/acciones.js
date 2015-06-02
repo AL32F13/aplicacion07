@@ -24,7 +24,22 @@ $(document).ready(function(e) {
 			$(this).removeClass('pulsado');
 		});
 		
+	audio=window.plugins.LowLatencyAudio;
 	
+	audio.prexloadfx('B1','audio/c.mp3',function(){}, function(msg) {alert("error" + msg);});
+	
+	audio.prexloadfx('B2','audio/c.mp3',function(){}, function(msg) {alert("error" + msg);});
+	
+	audio.prexloadfx('B3','audio/c.mp3',function(){}, function(msg) {alert("error" + msg);});
+	
+	audio.prexloadfx('B4','audio/c.mp3',function(){}, function(msg) {alert("error" + msg);});
+	
+	function quien (q)
+	{
+		audio.play(q);
+		
+		return q.substring(1);
+	}
 	
 //}); 
 });
