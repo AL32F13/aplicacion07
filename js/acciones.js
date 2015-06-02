@@ -1,6 +1,16 @@
 // JavaScript Document
 $(document).ready(function(e) {
-//document.addEventListener("deviceready",function(){
+document.addEventListener("deviceready",function(){
+	audio=window.plugins.LowLatencyAudio;
+	
+	audio.prexloadFX('B1','audio/C.mp3',function(){}, function(msg) {alert("error" + msg);});
+	
+	audio.prexloadFX('B2','audio/D.mp3',function(){}, function(msg) {alert("error" + msg);});
+	
+	audio.prexloadFX('B3','audio/E.mp3',function(){}, function(msg) {alert("error" + msg);});
+	
+	audio.prexloadFX('B4','audio/F.mp3',function(){}, function(msg) {alert("error" + msg);});
+	
 	$('#btnjugar').on('tap', function(){
 		var pantalla = $.mobile.getScreenHeight();
 		var encabezado = $('.ui-header').outerHeight();
@@ -24,15 +34,7 @@ $(document).ready(function(e) {
 			$(this).removeClass('pulsado');
 		});
 		
-	audio=window.plugins.LowLatencyAudio;
 	
-	audio.prexloadfx('B1','audio/C.mp3',function(){}, function(msg) {alert("error" + msg);});
-	
-	audio.prexloadfx('B2','audio/D.mp3',function(){}, function(msg) {alert("error" + msg);});
-	
-	audio.prexloadfx('B3','audio/E.mp3',function(){}, function(msg) {alert("error" + msg);});
-	
-	audio.prexloadfx('B4','audio/F.mp3',function(){}, function(msg) {alert("error" + msg);});
 	
 	function quien (q)
 	{
@@ -41,7 +43,7 @@ $(document).ready(function(e) {
 		return q.substring(1);
 	}
 	
-//}); 
+}); 
 });
 
 
