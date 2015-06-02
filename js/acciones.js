@@ -26,13 +26,13 @@ $(document).ready(function(e) {
 		
 	audio=window.plugins.LowLatencyAudio;
 	
-	audio.prexloadfx('B1','audio/c.mp3',function(){}, function(msg) {alert("error" + msg);});
+	audio.prexloadfx('B1','audio/C.mp3',function(){}, function(msg) {alert("error" + msg);});
 	
-	audio.prexloadfx('B2','audio/c.mp3',function(){}, function(msg) {alert("error" + msg);});
+	audio.prexloadfx('B2','audio/D.mp3',function(){}, function(msg) {alert("error" + msg);});
 	
-	audio.prexloadfx('B3','audio/c.mp3',function(){}, function(msg) {alert("error" + msg);});
+	audio.prexloadfx('B3','audio/E.mp3',function(){}, function(msg) {alert("error" + msg);});
 	
-	audio.prexloadfx('B4','audio/c.mp3',function(){}, function(msg) {alert("error" + msg);});
+	audio.prexloadfx('B4','audio/F.mp3',function(){}, function(msg) {alert("error" + msg);});
 	
 	function quien (q)
 	{
