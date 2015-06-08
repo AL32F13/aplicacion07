@@ -1,7 +1,7 @@
 // JavaScript Document
 $(document).ready(function(e) {
-document.addEventListener("deviceready",function(){
-	 
+    document.addEventListener("deviceready",function(){
+	cargarnombrejugador();
 	 var basedatos=window.sqlitePlugin.openDataBase({name: "coloresBD.db", createFromLocation:1});
 	 
 	audio=window.plugins.LowLatencyAudio;
@@ -24,7 +24,7 @@ document.addEventListener("deviceready",function(){
 		});//btnjugar.click
 		
 		$('.cuadro').on('vmousedown', function(){
-			$(this).addClass('pulsado');
+		$(this).addClass('pulsado');
 			});//mousedown
 		
 		function quien (q)
@@ -33,8 +33,8 @@ document.addEventListener("deviceready",function(){
 	}	
 		
 		$('.cuadro').on('vmouseup', function (){
-			$('#pantalla').append(quien($(this).attr('id')));
-			$(this).removeClass('pulsado');
+		$('#pantalla').append(quien($(this).attr('id')));
+		$(this).removeClass('pulsado');
 		});
 		
 	
@@ -44,6 +44,17 @@ document.addEventListener("deviceready",function(){
 		audio.play(q);
 		
 		return q.substring(1);
+	}
+	
+	function cargarnombrejugador()
+	{
+		basedatos.transactio(function(ejecutar){
+		var sql="SELECT NombreUsuario FROM Usuario";
+		ejecutar.executeSql(sql,undefined,function(ejecutar,resultado){
+		var datosjugador=resultado.row.item(0);
+		$('#jugador').text(datosjugador.NombreUsuario);
+		});
+		});
 	}
 	
 }); 
